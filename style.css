@@ -1,0 +1,24 @@
+body{
+    background-color: #f00;
+}
+
+nav{
+    background-color: #fff;
+    display: flex;
+}
+
+ul{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+div{
+    text-align: center;
+}
+
+h2{
+    background-color: #000;
+    color: #fff;
+}
