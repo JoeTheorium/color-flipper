@@ -1,5 +1,6 @@
 /* Global styles */
 body {
+    background-color: #f44336;    
     background-color: #f00;
     color: #fff;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -59,7 +60,6 @@ div {
 }
 
 h2 {
-    background-color: #f44336;
     background-color: #f00;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
