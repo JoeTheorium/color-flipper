@@ -1,6 +1,6 @@
 /* Global styles */
 body {
-    background-color: #f44336;
+    background-color: #f00;
     color: #fff;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
@@ -35,7 +35,7 @@ li {
 }
 
 li:hover {
-    color: #f44336;
+    color: #f00;
 }
 
 li:first-child {
