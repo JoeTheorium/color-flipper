@@ -1,31 +1,57 @@
+// Obtener elementos del DOM
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
+const body = document.querySelector("body");
+
+// Colores en formato hexadecimal
 const colors = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
 
-btn.addEventListener("click", () => {
-    const randomColor = generateRandomColor();
-
-    document.body.style.backgroundColor = randomColor;
-    color.textContent = randomColor;
-});
-
+// Función para generar un color aleatorio
 function generateRandomColor() {
-    let randomColor = "#";
-    for (let i = 0; i < 6; i++) {
-        randomColor += colors[Math.floor(Math.random() * colors.length)];
-    }
-    return randomColor;
+let randomColor = "#";
+for (let i = 0; i < 6; i++) {
+randomColor += colors[Math.floor(Math.random() * colors.length)];
+}
+return randomColor;
 }
 
-const span = document.querySelector(".color");
+// Función para obtener el color de fondo actual del cuerpo de la página
+function getBodyBackgroundColor() {
+return window.getComputedStyle(body).getPropertyValue("background-color");
+}
 
-span.addEventListener("mouseover", () => {
-    span.style.color = document.body.style.backgroundColor;
+// Función para cambiar el color de fondo y el texto al hacer click en el botón
+function changeBackgroundColor() {
+const randomColor = generateRandomColor();
+body.style.backgroundColor = randomColor;
+color.textContent = randomColor;
+}
+
+// Función para cambiar el color de fondo del botón al pasar el mouse sobre él
+function changeButtonHoverColor() {
+const bodyBackgroundColor = getBodyBackgroundColor();
+btn.style.backgroundColor = bodyBackgroundColor;
+btn.style.color = "#fff";
+}
+
+// Evento click en el botón
+btn.addEventListener("click", changeBackgroundColor);
+
+// Eventos mouseover y mouseout en el código de color
+color.addEventListener("mouseover", () => {
+color.style.color = body.style.backgroundColor;
 });
 
-span.addEventListener("mouseout", () => {
-    span.style.color = "#fff";
+color.addEventListener("mouseout", () => {
+color.style.color = "#fff";
 });
+
+// Evento mouseover en el botón
+btn.addEventListener("mouseover", changeButtonHoverColor);
+
+// Evento DOMSubtreeModified en el cuerpo de la página
+body.addEventListener("DOMSubtreeModified", changeButtonHoverColor);
+
 
 /*
 // HACER QUE QUEDE EL COLOR INVERTIDO EN EL "background-color" del "h2"
