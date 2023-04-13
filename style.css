@@ -60,6 +60,7 @@ div {
 
 h2 {
     background-color: #f44336;
+    background-color: #f00;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     color: #fff;
@@ -79,7 +80,7 @@ h2 {
 }
 
 .color:hover {
-    color: #f44336;
+    color: #f00;
 }
 
 #btn {
@@ -95,7 +96,7 @@ h2 {
 }
 
 #btn:hover {
-    background-color: #f44336;
+    background-color: #f00;
     color: #fff;
 }
 
